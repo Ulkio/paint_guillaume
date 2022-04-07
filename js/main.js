@@ -8,6 +8,3 @@ document.addEventListener("DOMContentLoaded", function () {
   const program = new Program();
   program.start();
 });
-// document.querySelector("#color-palette").addEventListener("click", function () {
-//   pen.setColorFromPalette();
-// });

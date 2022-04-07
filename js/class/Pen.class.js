@@ -1,5 +1,3 @@
-import ColorPalette from "./ColorPalette.class.js";
-
 class Pen {
   constructor() {
     // initialiser 2 propriétés avec des valeurs par defaut
