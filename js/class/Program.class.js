@@ -57,7 +57,16 @@ class Program {
       element.addEventListener("click", (e) => this.onClickPenSize(e));
     });
 
+    //
 
+    //
+
+    //
+
+    //
+    /* -------------------------------------------------------------------------- */
+    /*                                    BONUS                                   */
+    /* -------------------------------------------------------------------------- */
     // y'aura un gestionnaire d'evenement custom à créer (à ne pas faire tout de suite FFS !)
     // (clic palette)
 

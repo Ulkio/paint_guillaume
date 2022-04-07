@@ -21,6 +21,7 @@ class Pen {
     // mise à jour des propriété de dessin de l'ardoise(slate)
     ctx.strokeStyle = this.color;
     ctx.lineWidth = this.size;
+    ctx.lineCap = "round";
   }
 
   // methode pour appliquer une couleur rgb au crayon

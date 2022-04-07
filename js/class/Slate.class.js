@@ -18,23 +18,25 @@ class Slate {
     this.pen = pen;
 
     // installer les écouteur lié à la souris
-    this.canvas.addEventListener("mousedown", () => {
-      this.pen.configure(this.ctx);
+    this.canvas.addEventListener("mousedown", (e) => {
       this.isDrawing = true;
+      this.pen.configure(this.ctx);
+      this.currentLocation = getMouseLocation(e);
 
       this.canvas.addEventListener("mousemove", (e) => {
         if (this.isDrawing === true) {
-          this.currentLocation = getMouseLocation(e);
-          this.ctx.lineCap = "round";
           this.ctx.beginPath();
           this.ctx.moveTo(this.currentLocation.x, this.currentLocation.y);
-          this.ctx.lineTo(e.offsetX, e.offsetY);
-          this.ctx.closePath();
+          this.currentLocation = getMouseLocation(e);
+          this.ctx.lineTo(this.currentLocation.x, this.currentLocation.y);
           this.ctx.stroke();
         }
       });
     });
-    document.addEventListener("mouseup", (e) => {
+    this.canvas.addEventListener("mouseup", () => {
+      this.isDrawing = false;
+    });
+    this.canvas.addEventListener("mouseleave", () => {
       this.isDrawing = false;
     });
   }
