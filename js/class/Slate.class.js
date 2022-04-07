@@ -22,20 +22,22 @@ class Slate {
       this.isDrawing = true;
       this.pen.configure(this.ctx);
       this.currentLocation = getMouseLocation(e);
-
-      this.canvas.addEventListener("mousemove", (e) => {
-        if (this.isDrawing === true) {
-          this.ctx.beginPath();
-          this.ctx.moveTo(this.currentLocation.x, this.currentLocation.y);
-          this.currentLocation = getMouseLocation(e);
-          this.ctx.lineTo(this.currentLocation.x, this.currentLocation.y);
-          this.ctx.stroke();
-        }
-      });
     });
+
+    this.canvas.addEventListener("mousemove", (e) => {
+      if (this.isDrawing === true) {
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.currentLocation.x, this.currentLocation.y);
+        this.currentLocation = getMouseLocation(e);
+        this.ctx.lineTo(this.currentLocation.x, this.currentLocation.y);
+        this.ctx.stroke();
+      }
+    });
+
     this.canvas.addEventListener("mouseup", () => {
       this.isDrawing = false;
     });
+    
     this.canvas.addEventListener("mouseleave", () => {
       this.isDrawing = false;
     });
