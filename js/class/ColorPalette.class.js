@@ -31,12 +31,15 @@ class ColorPalette {
       this.canvas.getAttribute("width"),
       0
     );
-    gradient.addColorStop(0, "rgb(255,   0,   0)");
-    gradient.addColorStop(0.2, "rgb(255,   0, 255)");
-    gradient.addColorStop(0.4, "rgb(0,     0, 255)");
-    gradient.addColorStop(0.6, "rgb(0,   255, 255)");
-    gradient.addColorStop(0.8, "rgb(0,   255,   0)");
-    gradient.addColorStop(1, "rgb(255, 255,   0)");
+    gradient.addColorStop(0, "black");
+    gradient.addColorStop(0.14, "rgb(255,   0,   0)");
+    gradient.addColorStop(0.28, "rgb(255,   0, 255)");
+    gradient.addColorStop(0.42, "rgb(0,     0, 255)");
+    gradient.addColorStop(0.56, "rgb(0,   255, 255)");
+    gradient.addColorStop(0.7, "rgb(0,   255,   0)");
+    gradient.addColorStop(0.84, "rgb(255, 255,   0)");
+    gradient.addColorStop(1, "white");
+
     this.ctx.fillStyle = gradient;
     this.ctx.fillRect(
       0,

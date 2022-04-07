@@ -24,7 +24,6 @@ class Program {
   }
 
   onClickPenSize(e) {
-    console.log(this.pen.size);
     this.pen.setSize = e.target.getAttribute("data-size");
   }
 
@@ -46,23 +45,27 @@ class Program {
     document.querySelectorAll(".pen-color").forEach((element) => {
       element.addEventListener("click", (e) => this.onClickPenColor(e));
     });
+
     // SANS LE CUSTOM EVENT
     //
     // document
     //   .querySelector("#color-palette")
     //   .addEventListener("click", () => this.onPickColor());
+
     // EPAISSEUR
-    //
     document.querySelectorAll(".pen-size").forEach((element) => {
       element.addEventListener("click", (e) => this.onClickPenSize(e));
     });
 
+
     // y'aura un gestionnaire d'evenement custom à créer (à ne pas faire tout de suite FFS !)
     // (clic palette)
+
     const colorPalette = document.querySelector("#color-palette");
     const event = new CustomEvent("click-palette");
 
     colorPalette.addEventListener("click-palette", () => this.onPickColor());
+
     colorPalette.addEventListener("click", () => {
       colorPalette.dispatchEvent(event);
     });

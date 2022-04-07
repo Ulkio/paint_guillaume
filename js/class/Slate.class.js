@@ -25,8 +25,8 @@ class Slate {
       this.canvas.addEventListener("mousemove", (e) => {
         if (this.isDrawing === true) {
           this.currentLocation = getMouseLocation(e);
-          this.ctx.beginPath();
           this.ctx.lineCap = "round";
+          this.ctx.beginPath();
           this.ctx.moveTo(this.currentLocation.x, this.currentLocation.y);
           this.ctx.lineTo(e.offsetX, e.offsetY);
           this.ctx.closePath();
@@ -34,7 +34,7 @@ class Slate {
         }
       });
     });
-    document.addEventListener("mouseup", () => {
+    document.addEventListener("mouseup", (e) => {
       this.isDrawing = false;
     });
   }
